@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     def create
         @article=Article.find(params[:article_id])
         @comment=@article.comments.create(comment_params)
-        redirect_to article_path(@article.id)
+        redirect_to article_path(@article)
     end
     
     def edit
@@ -13,10 +13,12 @@ class CommentsController < ApplicationController
     end
 
     def update
+        @article=Article.find(params[:article_id])
         @comment=Comment.find(params[:id])
         if @comment.update(comment_params)
             redirect_to article_path(@comment.article_id)
         else 
+            @comment=Comment.find(params[:id])
             render 'edit'
         end
     end
@@ -28,7 +30,7 @@ class CommentsController < ApplicationController
     end
     
     private
-    def comment_params
-        params[:comment].permit(:title,:text)
-    end
+        def comment_params
+            params[:comment].permit(:title,:text)
+        end
 end
