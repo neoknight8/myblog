@@ -1,15 +1,22 @@
 ---
 ja:
   activerecord:
-  
+  models:
+    article: 記事
+    comment: コメント
   attributes:
-    title: タイトル
-    text: 本文
-    id: ID
-    created_at: 登録日時
-    updated_at: 更新日時
-
-  
+    article:
+      title: タイトル
+      text: 本文
+      id: ID
+      created_at: 登録日時
+      updated_at: 更新日時
+    comment:
+      title: タイトル
+      text: 本文
+      id: ID
+      created_at: 登録日時
+      updated_at: 更新日時  
   
     errors:
       messages:
@@ -214,7 +221,7 @@ ja:
       short: "%y/%m/%d %H:%M"
     pm: 午後
 
-    models:
-      article: 記事
-      comment: コメント
 
+
+
+    
